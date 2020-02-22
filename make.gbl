@@ -1,0 +1,31 @@
+TOP=/home/sysadmin/develop
+OS_ARCH=$(shell uname -s)
+ifeq ($(OS_ARCH),SunOS)
+	M_ARCH=$(shell isainfo -n)
+	SED=/opt/csw/bin/gsed
+	MKDIR=/usr/bin/mkdir
+	INSTALL=/usr/sbin/install -f
+	QWNFLG=-u
+	COMP=cc
+	CTAGS=ctags -t
+#	COMP=gcc
+endif
+
+ifeq ($(OS_ARCH),Linux)
+	M_ARCH=$(shell uname -m)
+	SED=/bin/sed
+	MKDIR=/bin/mkdir
+	INSTALL=/usr/bin/install -t
+	QWNFLG=-o
+	COMP=gcc
+	CTAGS=ctags
+endif
+
+ARCH=$(OS_ARCH)_$(M_ARCH)
+
+
+YACC = bison
+LEX = flex
+AR = ar
+INSTALL_DIR=/opt/KSE
+SNAP_DIR=/develop/snapshots

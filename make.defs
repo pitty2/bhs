@@ -1,0 +1,157 @@
+#
+# Setup and derived lists
+#
+ifndef OS_ARCH
+	OS_ARCH=$(shell uname -s)
+endif
+ifndef M_ARCH
+	ifeq ($(OS_ARCH),SunOS)
+		M_ARCH=$(shell isainfo -n)
+	endif
+	ifeq ($(OS_ARCH),Linux)
+		M_ARCH=$(shell uname -m)
+	endif
+endif
+ARCH=$(OS_ARCH)_$(M_ARCH)
+
+LCFILES= ${LFILES:.l=.c}
+LHFILES= ${LFILES:.l=.h}
+YCFILES= ${YFILES:.y=.c}
+YHFILES= ${YFILES:.y=.h}
+YGFILES= ${YFILES:.y=.graph}
+CFILES= ${SRCS} ${YCFILES} ${LCFILES}
+
+BITS = 64
+
+ifdef OBJ_DIR
+	ifeq ($(BITS),64)
+		OBJDIR=$(OBJ_DIR)/$(ARCH)/64
+	else
+		OBJDIR=$(OBJ_DIR)/$(ARCH)
+	endif
+endif
+ifdef LIB_DIR
+	ifeq ($(BITS),64)
+		LIBDIR=$(LIB_DIR)/$(ARCH)/64
+	else
+		LIBDIR=$(LIB_DIR)/$(ARCH)
+	endif
+endif
+ifdef BIN_DIR
+	ifeq ($(BITS),64)
+		BINDIR=$(BIN_DIR)/$(ARCH)/64
+	else
+		BINDIR=$(BIN_DIR)/$(ARCH)
+	endif
+endif
+
+ifdef DYNLIB_IMPDIR
+	ifeq ($(OS_ARCH),Linux)
+		DYNLIB_LPATH=$(DYNLIB_IMPDIR:%=-L %)
+		DYNLIB_RPATH=$(DYNLIB_IMPDIR:%=-WL,-rpath=%)
+	else
+		DYNLIB_LPATH=$(DYNLIB_IMPDIR:%=-L %)
+		DYNLIB_RPATH=$(DYNLIB_IMPDIR:%=-R %)
+	endif
+endif
+ifdef DYN_LIBS
+	DYNLIBS=$(DYN_LIBS)
+endif
+
+ifdef LIB_IMPORT_SNAP_DIR
+	ifeq ($(BITS),64)
+		LIBIMPORTSNAPDIR=$(LIB_IMPORT_SNAP_DIR)/lib/$(ARCH)/64
+	else
+		LIBIMPORTSNAPDIR=$(LIB_IMPORT_SNAP_DIR)/lib/$(ARCH)/
+	endif
+endif
+ifdef LIB_IMPORT_DIR
+	ifeq ($(BITS),64)
+		LIBIMPORTDIR=$(LIB_IMPORT_DIR)/lib/64
+	else
+		LIBIMPORTDIR=$(LIB_IMPORT_DIR)/lib
+	endif
+endif
+
+ifdef INC_DIR
+	INCLUDES=$(INC_DIR:%=-I %)
+	TAG_INCLUDES=$(INC_DIR:%=%/*.h)
+endif
+
+ifeq ($(BITS),64)
+	DEPEND_FILE=$(OS_ARCH)_depend.64.d
+else
+	DEPEND_FILE=$(OS_ARCH)_depend.32.d
+endif
+
+OFILES= ${CFILES:%.c=${OBJDIR}/%.o}
+DFILES= ${SRCS:.c=.d}
+
+ifeq ($(M_ARCH),armv7l)
+	MFLG= -fPIC
+else
+	MFLG= -m${BITS} -fPIC
+endif
+
+CDEFS=-D$(OS_ARCH) -D$(M_ARCH) $(MODULE_CDEFS)
+CFLG= -g -O0 ${CDEFS}
+
+ifeq ($(OS_ARCH),Linux)
+#	LDFLG= -ldl -rdynamic
+	LDFLG= -ldl
+else
+	LDFLG= -G
+endif
+
+ifeq ($(COMP),cc)
+	CC=${COMP} -v +w +w2  -errshort=full -xc99=all ${MFLG} ${CFLG} ${INCLUDES} -c 
+	LD=${COMP} ${MFLG} ${LDFLG} $(MODULE_LDFLG)
+	DD=${COMP} -xM1 ${INCLUDES} ${CDEFS}
+else
+	CC=${COMP} ${MFLG} ${CFLG} ${INCLUDES} -c -Wall -Wimplicit -Wpointer-arith 
+	LD=${COMP} ${MFLG} ${LDFLG} $(MODULE_LDFLG)
+	DD=${COMP} -MM ${INCLUDES} ${CDEFS}
+endif
+
+ifdef INST_BASE
+	INSTBASE=$(INST_BASE)
+endif
+ifdef INST_INC
+	INSTINC=$(INST_INC)
+endif
+ifdef INST_LIB
+	ifeq ($(BITS),64)
+		INSTLIB=$(INST_LIB)/64
+	else
+		INSTLIB=$(INST_LIB)
+	endif
+endif
+ifdef INST_BIN
+	ifeq ($(BITS),64)
+		INSTBIN=$(INST_BIN)/64
+	else
+		INSTBIN=$(INST_BIN)
+	endif
+endif
+
+ifdef SNAPSHOT_BASE
+	SNAPSHOTBASE=$(SNAPSHOT_BASE)
+endif
+ifdef SNAPSHOT_INC
+	SNAPSHOTINC=$(SNAPSHOT_INC)
+endif
+ifdef SNAPSHOT_LIB
+	ifeq ($(BITS),64)
+		SNAPSHOTLIB=$(SNAPSHOT_LIB)/64
+	else
+		SNAPSHOTLIB=$(SNAPSHOT_LIB)
+	endif
+endif
+ifdef SNAPSHOT_BIN
+	ifeq ($(BITS),64)
+		SNAPSHOTBIN=$(SNAPSHOT_BIN)/64
+	else
+		SNAPSHOTBIN=$(SNAPSHOT_BIN)
+	endif
+endif
+

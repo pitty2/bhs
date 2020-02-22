@@ -1,0 +1,25 @@
+dep:
+	$(DD) $(SRCS) > xxx.d
+	$(SED) -e 's,^\(.*\.o\):,${OBJDIR}/\1:,' xxx.d > $(DEPEND_FILE)
+	rm xxx.d
+
+clean:
+	rm -f *.s
+	rm -f ${OFILES}
+	rm -f ${LCFILES}
+	rm -f ${YCFILES}
+	rm -f ${YHFILES}
+	rm -f *.output
+
+clobber:
+	${MAKE} clean
+	rm -f xx
+	rm -f tags
+	rm -f core
+	rm -f *.tar
+	rm -f $(DEPEND_FILE)
+	rm -rf ${OBJDIR}
+	rm -rf ${TARGET}
+
+tag:
+	$(CTAGS) ${TAG_INCLUDES} $(INCS) ${SRCS} ${LFILES} ${YFILES} 
