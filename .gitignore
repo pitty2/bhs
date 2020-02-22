@@ -1,3 +1,5 @@
 Linux_depend.64.d
 *.o
-
+bin/
+lib/
+obj/
