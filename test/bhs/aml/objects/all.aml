@@ -1,0 +1,17 @@
+#
+#
+#
+NULL.obj = 0;
+
+arr.num.obj.1 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+arr.num.obj.2 = [ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ];
+
+num.obj.1 = 1;
+num.obj.2 = 2;
+
+str.obj.1 = "aaa";
+str.obj.2 = "bbb";
+
+bool.obj.1 = TRUE;
+bool.obj.2 = FALSE;
+

@@ -1,0 +1,8 @@
+//
+// *
+// Test der mul_fnc function 
+//
+num1 = 9 * 2;
+
+num2 = 0 * 9;
+

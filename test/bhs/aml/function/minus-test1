@@ -1,0 +1,6 @@
+#
+#
+#
+a = 9 - 10;
+
+b = "Dat ist ein minus-test mit einem String" - len("String");

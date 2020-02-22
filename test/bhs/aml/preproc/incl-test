@@ -1,0 +1,7 @@
+#
+# im Ausdruck, der auf include folgt, duerfen nur String-Literale
+# und Builtin-Funktionen verwendet werden.
+#
+#include pwd() + "/" + "ChadExit.ini";
+
+b1 = TRUE ;

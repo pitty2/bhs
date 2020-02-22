@@ -1,0 +1,13 @@
+//
+// Test der div_fnc function
+//
+num1 = 9 / 2;
+
+num3 = 0 / 9;
+
+s1 = "1234567890" / 1;
+
+s2 = "1234567890" / 3;
+
+s3 = "Das ist ein strtok Test" / " ";
+

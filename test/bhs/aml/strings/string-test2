@@ -1,0 +1,18 @@
+str_a = "string value" + " test";
+
+str_b = "aaa" - 2;
+
+str_c = "line to long" / " ";
+
+str_d = "123456789" / 4;
+
+str_aa =  {
+	str_bb = "abcd" -1;
+};
+
+str_Substantive = [
+	"Aal",
+	"Baum",
+	"Katze"
+];
+

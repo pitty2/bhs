@@ -1,0 +1,24 @@
+#include aaa
+#include array
+#include bbb
+#include bool
+#include ccc
+#include ChadExit.ini
+#include comp-test
+#include ddd
+#include div-error-test
+#include div-test
+#include expr
+#include incl-test
+#include mul-test
+#include num
+#include number
+#include str
+#include ternary
+#include test_aml2.txt
+#include test_aml.txt
+#include test-file.aml
+#include unary1
+#include value-test
+
+-- main = "main.c";

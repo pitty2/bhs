@@ -1,0 +1,36 @@
+result-tree [DATA_LIST] (0/2) {
+	symbol-tree [DATA_LIST] (1/1) {
+		normalized-symbol [DATA_LIST] (2/1) {
+			symbol [DATA_STRING] (2/3) {
+				"aaa"
+			}
+		}
+	}
+	aml [DATA_LIST] (1/1) {
+		assign [DATA_LIST] (1/2) {
+			name [DATA_LIST] (1/2) {
+				normalized-symbol [DATA_LIST] (2/1) {
+					symbol [DATA_STRING] (2/3) {
+						"aaa"
+					}
+				}
+				symbol [DATA_STRING] (2/3) {
+					"aaa"
+				}
+			}
+			value [DATA_LIST] (2/1) {
+				value [DATA_LIST] (2/1) {
+					data_circ : {
+						value           [DATA_LIST] <=(0)=> value           [DATA_LIST]
+						data_stack : {
+							PARENT value           [DATA_LIST] <--> CHILD  value           [DATA_LIST]
+							PARENT assign          [DATA_LIST] <--> CHILD  value           [DATA_LIST]
+							PARENT aml             [DATA_LIST] <--> CHILD  assign          [DATA_LIST]
+							PARENT result-tree     [DATA_LIST] <--> CHILD  aml             [DATA_LIST]
+						}
+					}
+				}
+			}
+		}
+	}
+}

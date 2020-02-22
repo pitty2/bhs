@@ -1,0 +1,6 @@
+#
+#
+#
+hostname = uname(nodename);
+
+ver = uname(version);

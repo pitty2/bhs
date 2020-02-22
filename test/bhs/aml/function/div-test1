@@ -1,0 +1,6 @@
+#
+#
+#
+a = 9 / 2;
+
+b = "Das ist ein div-Test mit einem String" / " ";

@@ -1,0 +1,5 @@
+#
+# Tests fuer bitweises AND
+#
+
+a = 9 & 0xff;

@@ -1,0 +1,10 @@
+#
+#
+#
+
+#include objects/all.aml
+
+a = arr.num.obj.1 == arr.num.obj.2;
+b = arr.num.obj.1 == arr.num.obj.1;
+
+c = "AAA" == "AAA";

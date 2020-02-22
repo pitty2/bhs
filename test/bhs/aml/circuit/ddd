@@ -1,0 +1,11 @@
+aaa = {
+	bbb = aaa;
+	ccc = aaa->bbb;
+	ddd = aaa->ddd;
+};
+
+bbb = bbb;
+
+ccc = ddd;
+
+ddd = ccc;

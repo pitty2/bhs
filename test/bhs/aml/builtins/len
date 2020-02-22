@@ -1,0 +1,15 @@
+#
+#
+#
+test.bool = TRUE;
+test.num = 9;
+test.string = "Test String";
+
+test.array = [ test.string, test.string ];
+
+bool.len = len(test.bool);
+num.len = len(test.num);
+string.len = len(test.string);
+array.len = len(test.array);
+
+string.len2 = len(" " + test.string );

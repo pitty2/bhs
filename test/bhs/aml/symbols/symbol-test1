@@ -1,0 +1,13 @@
+#
+# Mehrfach definierte Symbole
+#
+aaa = 0;
+aaa = 10;
+
+bbb = 0;
+bbb = 10;
+
+ccc = {
+	ddd = 0;
+	ddd = 10;
+};

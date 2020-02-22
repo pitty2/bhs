@@ -1,0 +1,124 @@
+#
+# aml - systax testfile
+#
+expr = 9 * (5 + ddd$aaa) ;
+expr_1 = (10 - 2);
+expr_2 = 10 - 2;
+
+char1 = 'A';
+
+aaa = 12345; -- sigle value
+aaa_1 = 0x100;
+aaa_2 = 0x7fffffff;
+aaa.a2 = 0x7fffffffffffffff;
+aa_2 = '01111111111111111111111111111111'B;
+
+bbb = "Das ist ein String.";
+
+ccc = [ 1, "zwei", 'a'] ; -- das gibt einen semanic error
+ccc_9 = [ 1, "zwei", 'a' ; -- und das einen sysntax error
+
+x9 = ccc[0];
+
+ddd = {
+	aaa = 1;
+	ddd_1 = {
+		aaa_1 = "Nest level 2";
+	} ;
+};
+
+xdd = {
+	aaa = 1;
+	ddd_1 = {
+		aaa_1 = "Nest level 2";
+	} ;
+};
+
+aaa = ddd;
+aaa.a3 = ccc$dd$vv[0];
+aaa ;
+
+fter_ccc = [ 1, "zwei", 'a' ] ;
+
+
+xxx = [
+	+ddd,
+	-1,
+	(ccc[2] - 9),
+	(ccc[3] - 9),
+	10 * (5 + 1),
+	0x0c,
+	0xff,
+	0xffffffff
+	];
+
+192.168.254.80 = "ksepc01" ;
+
+rererence_try = 192.168.254.80;
+
+reftest = ddd$ddd_1$aaa_1 ;
+a_reftest = ddd$ddd_1$aaa_1 ;
+
+-- y = {
+#
+# aml - systax testfile
+#
+expr = 9 * (5 + ddd$aaa) ;
+expr_1 = (10 - 2);
+expr_2 = 10 - 2;
+
+char1 = 'A';
+
+aaa = 12345; -- sigle value
+aaa_1 = 0x100;
+aaa_2 = 0x7fffffff;
+aaa.a2 = 0x7fffffffffffffff;
+aa_2 = '01111111111111111111111111111111'B;
+
+bbb = "Das ist ein String.";
+
+ccc = [ 1, "zwei", 'a'] ; -- das gibt einen semanic error
+ccc_9 = [ 1, "zwei", 'a' ; -- und das einen sysntax error
+
+x9 = ccc[0];
+
+ddd = {
+	aaa = 1;
+	ddd_1 = {
+		aaa_1 = "Nest level 2";
+	} ;
+};
+
+xdd = {
+	aaa = 1;
+	ddd_1 = {
+		aaa_1 = "Nest level 2";
+	} ;
+};
+
+aaa = ddd;
+aaa.a3 = ccc$dd$vv[0];
+aaa ;
+
+fter_ccc = [ 1, "zwei", 'a' ] ;
+
+
+xxx = [
+	+ddd,
+	-1,
+	(ccc[2] - 9),
+	(ccc[3] - 9),
+	10 * (5 + 1),
+	0x0c,
+	0xff,
+	0xffffffff
+	];
+
+192.168.254.80 = "ksepc01" ;
+
+rererence_try = 192.168.254.80;
+
+reftest = ddd$ddd_1$aaa_1 ;
+a_reftest = ddd$ddd_1$aaa_1 ;
+
+-- y = {

@@ -1,0 +1,12 @@
+//
+// Test der div_fnc function
+//
+num2 = 9 / 0;
+
+s1 = "1234567890" / 0;
+
+s4 = "Das ist ein negativer strtok Test!" / "j";
+
+s5 = 0 / "aaa";
+
+s6 = TRUE / FALSE;

@@ -1,0 +1,18 @@
+
+a = 9 + ccc;
+
+
+aaa = {
+	bbb = 10;
+	bbc = 10;
+};
+
+bb = [ ccc, aaa, [ bb ] ] ;
+
+ccc = 19;
+
+d = aaa->bbc[0,9] ;
+
+f = bb[0] ;
+
+e = x;

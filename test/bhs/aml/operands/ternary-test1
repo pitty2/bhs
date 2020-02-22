@@ -1,0 +1,10 @@
+#include defaults.aml
+
+hostname = uname(nodename);
+
+a = {
+	dd = 99;
+	cc = 100;
+};
+
+b = hostname == "no-sissy" ? a : NULL;

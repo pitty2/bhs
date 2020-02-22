@@ -1,0 +1,35 @@
+-- #include str.txt
+-- #include str
+
+a = 1 + 2+ 3+ 4;
+
+xx = +(-9);
+yy = -(-9);
+
+
+cc = [ 9+9, 10] ;
+
+b = a + cc[0] ;
+
+s1 = "Das ist ein String";
+
+s2 = "test" + " " + s1;
+
+s3 = "false string";
+
+structure = {
+	aaa = 9;
+};
+
+
+-- s3 = s1 + 9;
+-- s4 = s1 + structure;
+-- s5 = s1 + cc;
+
+-- struc1 = structure + structure ;
+-- struc2 = structure + cc ;
+-- struc3 = cc + cc ;
+
+aa = (s1 == s2) ? s1 : s2;
+
+
