@@ -1,3 +1,8 @@
+src/bhs/aml_parser.c
+src/bhs/aml_parser.h
+src/bhs/aml_parser.output
+src/bhs/aml_scanner.c
+src/bhs/aml_scanner.h
 Linux_depend.64.d
 tags
 *.o
