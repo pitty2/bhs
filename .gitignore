@@ -3,6 +3,8 @@ src/bhs/aml_parser.h
 src/bhs/aml_parser.output
 src/bhs/aml_scanner.c
 src/bhs/aml_scanner.h
+src/bhs/bnf_scanner.c
+src/bhs/bnf_scanner.h
 Linux_depend.64.d
 tags
 *.o
