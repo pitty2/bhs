@@ -13,8 +13,8 @@ OBJ_DIR=./obj
 LIB_DIR=../../lib
 #DYN_LIBS=-ldl
 
-LFILES=aml_scanner.l 
-YFILES=aml_parser.y 
+LFILES=aml_scanner.l
+YFILES=aml_parser.y
 
 SRCS= \
 	arr.c \
@@ -115,8 +115,9 @@ aml_parser.h : aml_parser.y aml.h ../../include/bhs/fncrc.h ../../include/bhs/co
 aml_parser.c : aml_parser.y aml.h ../../include/bhs/fncrc.h ../../include/bhs/compile.h
 	${YACC} aml_parser.y
 
-aml_scanner.c : aml_scanner.l aml_parser.h aml.h ../../include/bhs/fncrc.h ../../include/bhs/compile.h
+aml_scanner.c aml_scanner.h : aml_scanner.l aml_parser.h aml.h ../../include/bhs/fncrc.h ../../include/bhs/compile.h
 	${LEX} aml_scanner.l
+
 
 -include $(DEPEND_FILE)
 
