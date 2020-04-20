@@ -24,7 +24,7 @@ SRCS= \
 INCS = \
 	_memdbg.h 
 
-include $(TOP)/make.inc/make.defs
+include ../../make.inc/make.defs
 LIBRARY=$(LIBDIR)/$(MODULE_NAME).so
 ARCHIVE=$(LIBDIR)/$(MODULE_NAME).a
 
@@ -32,8 +32,8 @@ TARGET= ${OBJDIR} ${LIBDIR} ${ARCHIVE} ${LIBRARY}
 
 all : ${TARGET}
 
-include $(TOP)/make.inc/make.rules
+include ../../make.inc/make.rules
 -include $(DEPEND_FILE)
 
-include $(TOP)/make.inc/make.cmds
+include ../../make.inc/make.cmds
 

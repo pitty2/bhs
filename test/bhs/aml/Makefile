@@ -9,7 +9,7 @@ LIBREFS= -lbhs -lpthread -ldl
 SRCS= \
 	main.c 
 
-include $(TOP)/make.inc/make.defs
+include ../../../make.inc/make.defs
 ARREFS= ${LIBDIR}/libbhs.a
 ARREFS+= /usr/lib/x86_64-linux-gnu/libdl.a
 
@@ -31,6 +31,6 @@ all : ${OBJDIR} ${BINDIR} ${TARGET}
 
 -include $(DEPEND_FILE)
 
-include $(TOP)/make.inc/make.rules
-include $(TOP)/make.inc/make.cmds
+include ../../../make.inc/make.rules
+include ../../../make.inc/make.cmds
 

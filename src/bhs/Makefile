@@ -99,7 +99,7 @@ INCS = \
 	aml.h \
 	bnf.h
 
-include $(TOP)/make.inc/make.defs
+include ../../make.inc/make.defs
 LIBRARY=$(LIBDIR)/$(MODULE_NAME).so
 ARCHIVE=$(LIBDIR)/$(MODULE_NAME).a
 
@@ -107,7 +107,7 @@ TARGET= ${OBJDIR} ${LIBDIR} ${ARCHIVE} ${LIBRARY}
 
 all : ${TARGET}
 
-include $(TOP)/make.inc/make.rules
+include ../../make.inc/make.rules
 
 aml_parser.h : aml_parser.y aml.h ../../include/bhs/fncrc.h ../../include/bhs/compile.h
 	${YACC} aml_parser.y
@@ -120,5 +120,5 @@ aml_scanner.c : aml_scanner.l aml_parser.h aml.h ../../include/bhs/fncrc.h ../..
 
 -include $(DEPEND_FILE)
 
-include $(TOP)/make.inc/make.cmds
+include ../../make.inc/make.cmds
 
