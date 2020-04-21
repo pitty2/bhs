@@ -26,6 +26,9 @@ endif
 BIN=$(BINDIR)/$(MODULE_NAME)
 # SBIN=$(BINDIR)/s$(MODULE_NAME)
 
+TAG_EXTRAS=../../../src/bhs/*.[ch]
+
+
 TARGET= ${BIN} ${SBIN}
 all : ${OBJDIR} ${BINDIR} ${TARGET}
 
