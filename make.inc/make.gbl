@@ -1,4 +1,4 @@
-TOP=/home/sysadmin/develop
+# TOP=/home/sysadmin/develop
 OS_ARCH=$(shell uname -s)
 ifeq ($(OS_ARCH),SunOS)
 	M_ARCH=$(shell isainfo -n)
@@ -27,5 +27,5 @@ ARCH=$(OS_ARCH)_$(M_ARCH)
 YACC = bison
 LEX = flex
 AR = ar
-INSTALL_DIR=/opt/KSE
+INSTALL_DIR=/opt/BHS
 SNAP_DIR=/develop/snapshots
