@@ -23,4 +23,4 @@ clobber:
 	rm -rf ${TARGET}
 
 tag:
-	$(CTAGS) ${TAG_INCLUDES} $(INCS) ${SRCS} ${LFILES} ${YFILES} 
+	$(CTAGS) ${TAG_INCLUDES} $(INCS) ${SRCS} ${LFILES} ${YFILES} ${TAG_EXTRAS}
