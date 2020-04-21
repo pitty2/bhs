@@ -236,7 +236,6 @@ uname_builtin_fnc(
 	TRY(data_lst_next, FNC_ABORT, sp, argv, &lnk);
 	TRY(data_link_2child, FNC_ABORT, sp, lnk, &arg);
 	cstr = DCSTR(arg);
-	len = strlen(cstr);
 
 	if(strcmp(cstr, "sysname") == 0) {
 		ustr = ptr->sysname;
@@ -275,6 +274,7 @@ uname_builtin_fnc(
 		TRY(comp_err_new, FNC_ABORT, sp, msg, &dp);
 		goto FNC_EXIT;
 	}
+	len = strlen(ustr);
 	TRY(data_str_new, FNC_ABORT,sp, STRING, len, ustr, &dp);
 
 FNC_ABORT:
