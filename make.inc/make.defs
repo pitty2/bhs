@@ -1,5 +1,5 @@
 #
-# Setup and derived lists
+# Setup and derive lists
 #
 ifndef OS_ARCH
 	OS_ARCH=$(shell uname -s)
