@@ -1,4 +1,4 @@
-# TOP=/home/sysadmin/develop
+
 OS_ARCH=$(shell uname -s)
 ifeq ($(OS_ARCH),SunOS)
 	M_ARCH=$(shell isainfo -n)
